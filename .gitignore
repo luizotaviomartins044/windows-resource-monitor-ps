@@ -1,0 +1,13 @@
+# Logs
+*.log
+
+# PowerShell
+*.pshistory
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Pastas comuns
+bin/
+obj/
