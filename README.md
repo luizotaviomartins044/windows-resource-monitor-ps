@@ -66,7 +66,7 @@ cd windows-resource-monitor-ps
 
 ## 📸 Screenshot
 
-![Monitor de Recursos](images/screenshot.png)
+![Monitor de Recursos](images/printInMonitor.png)
 
 ---
 
