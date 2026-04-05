@@ -64,6 +64,63 @@ cd windows-resource-monitor-ps
 
 ---
 
+---
+
+## 🌐 Execução remota (Invoke-Command)
+
+Também é possível executar o script remotamente em servidores Windows utilizando PowerShell Remoting (WinRM).
+
+### 📌 Pré-requisitos
+
+* PowerShell Remoting habilitado no servidor:
+
+```powershell
+Enable-PSRemoting -Force
+```
+
+* Permissão de acesso remoto ao servidor
+
+---
+
+### ▶️ Executando remotamente
+
+```powershell
+Invoke-Command -ComputerName "NOME_DO_SERVIDOR" -FilePath ".\monitor.ps1"
+```
+
+---
+
+### 🔐 Executando com credenciais
+
+```powershell
+$cred = Get-Credential
+
+Invoke-Command -ComputerName "NOME_DO_SERVIDOR" `
+    -Credential $cred `
+    -FilePath ".\monitor.ps1"
+```
+
+---
+
+### 📡 Monitorando múltiplos servidores
+
+```powershell
+$servers = @("SRV01", "SRV02", "SRV03")
+
+Invoke-Command -ComputerName $servers -FilePath ".\monitor.ps1"
+```
+
+---
+
+### ⚠️ Observações
+
+* O WinRM deve estar habilitado nos servidores remotos
+* Pode ser necessário configurar firewall e TrustedHosts
+* Para ambientes em domínio, a autenticação é simplificada
+
+---
+
+
 ## 📸 Screenshot
 
 ![Monitor de Recursos](images/printInMonitor.png)
